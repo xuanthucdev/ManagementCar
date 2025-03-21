@@ -9,7 +9,6 @@ import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Motorbike, Integer> {
-
-
-
+    @Override
+    void deleteById(Integer integer);
 }

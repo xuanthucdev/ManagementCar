@@ -16,4 +16,9 @@ public class ProductServiceImpl implements ProductService {
     public Iterable<Motorbike> findAll() {
         return productRepository.findAll();
     }
+
+    @Override
+    public void deleteById(Integer id) {
+        productRepository.deleteById(id);
+    }
 }

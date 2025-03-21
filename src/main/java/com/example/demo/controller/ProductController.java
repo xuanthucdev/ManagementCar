@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MimeTypeUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -16,8 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductController {
     @Autowired
     private ProductService productService;
-
-
     @GetMapping(value = "/findAll", produces = MimeTypeUtils.APPLICATION_JSON_VALUE)
     public ResponseEntity<Iterable<Motorbike>> getAllProducts() {
         try {
@@ -26,5 +22,10 @@ public class ProductController {
             e.printStackTrace();
             return new ResponseEntity<Iterable<Motorbike>>(HttpStatus.BAD_REQUEST);
         }
+    }
+    @DeleteMapping(value = "/delete{id}")
+    public ResponseEntity<String> deleteProduct(@PathVariable Integer id){
+        productService.deleteById(id);
+        return ResponseEntity.ok("ok");
     }
 }

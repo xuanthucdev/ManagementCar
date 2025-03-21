@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface ProductService {
     Iterable<Motorbike> findAll() ;
+    void deleteById(Integer id);
 }
