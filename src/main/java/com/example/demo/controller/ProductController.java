@@ -28,4 +28,15 @@ public class ProductController {
         productService.deleteById(id);
         return ResponseEntity.ok("ok");
     }
+
+    @PutMapping(value = "update/{id}")
+    public ResponseEntity<String> updateProduct(@PathVariable Integer id, @RequestBody Motorbike motorbike) {
+        boolean isUpdated = productService.updateProduct(id, motorbike);
+
+        if (isUpdated) {
+            return new ResponseEntity<>("Motorbike updated successfully", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Motorbike not found", HttpStatus.NOT_FOUND);
+        }
+    }
 }

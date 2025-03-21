@@ -11,4 +11,9 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository<Motorbike, Integer> {
     @Override
     void deleteById(Integer integer);
+
+    @Query("UPDATE Motorbike m SET m.name = :name, m.brand = :brand, m.price = :price, m.quantity = :quantity, m.description = :description, m.status = :status WHERE m.id = :id")
+    void updateMotorbike(Integer id, String name, String brand, double price, int quantity, String description, String status);
+
+
 }
