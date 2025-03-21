@@ -1,4 +1,4 @@
-package com.example.car_management.entities;
+package com.example.demo.entities;
 
 
 import jakarta.persistence.*;

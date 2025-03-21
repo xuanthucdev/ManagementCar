@@ -1,8 +1,5 @@
-package com.example.car_management.controller;
+package com.example.demo.controller;
 
-
-import com.example.car_management.entities.Product;
-import com.example.car_management.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.example.car_management.service;
+package com.example.demo.service;
 
 import com.example.car_management.entities.Product;
 import com.example.car_management.repository.ProductRepository;
