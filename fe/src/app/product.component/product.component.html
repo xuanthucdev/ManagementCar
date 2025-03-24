@@ -1,0 +1,28 @@
+<h1>Product Info</h1>
+<table class="table table-striped table-bordered table-hover">
+
+    <tr>
+        <th>Id</th>
+        <th>Name</th>   
+        <th>Brand</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+    <ng-container *ngFor="let p of products ">
+        <tr>
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.brand}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.quantity}}</td>
+            <td>{{p.status}}</td>
+            <td>&nbsp;
+                <p-button severity="warning">Xoa</p-button>&nbsp;
+                <p-button severity="info">Sua</p-button>
+            </td>
+        </tr>
+    </ng-container>
+
+</table>
